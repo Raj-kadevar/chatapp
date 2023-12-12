@@ -1,0 +1,12 @@
+chatapp/chatapp/settings/dev.py
+*.py[co]
+.idea/
+.coverage
+media/*
+chatapp/media/*
+.idea/*	
+.templates/
+.templates
+htmlcov/
+.env
+.flake8
