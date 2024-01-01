@@ -140,6 +140,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.messages",
     "rest_framework",
+    'knox',
     "rest_framework.authtoken",
 ]
 ASGI_APPLICATION = "chatapp.asgi.application"
@@ -172,8 +173,7 @@ CHANNEL_LAYERS = {
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
+        'knox.auth.TokenAuthentication',
     ),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10
