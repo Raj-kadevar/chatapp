@@ -141,12 +141,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "rest_framework",
     'knox',
+    "channels",
     "rest_framework.authtoken",
 ]
 ASGI_APPLICATION = "chatapp.asgi.application"
 AUTH_USER_MODEL = "user.User"
 # LOGIN_REDIRECT_URL = "user:redirect"
-
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "login"
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",

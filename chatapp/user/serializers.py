@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
 
-from user.models import User
+from user.models import User, Chat
 
 
 class UserList(serializers.ModelSerializer):
@@ -10,9 +10,6 @@ class UserList(serializers.ModelSerializer):
         fields = ['id', 'username', 'profile', 'email']
 
 
-# class MessageSerializer(serializers.Serializer):
-#     message = serializers.CharField()
-#     sender = serializers.IntegerField()
 
 class AuthSerializer(serializers.Serializer):
     '''serializer for the user authentication object'''
@@ -37,3 +34,9 @@ class AuthSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return attrs
+
+
+class ChatMessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Chat
+        fields = "__all__"
